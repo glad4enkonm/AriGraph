@@ -1,4 +1,4 @@
-name: Black Formatter
+name: Black Formatter test
 'on':
   push:
     branches: &id001

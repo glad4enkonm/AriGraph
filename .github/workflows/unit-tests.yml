@@ -1,11 +1,13 @@
 name: Unit Tests
 'on':
   push:
-    branches: &id001
+    branches:
     - main
     - master
   pull_request:
-    branches: *id001
+    branches:
+    - main
+    - master
   workflow_dispatch: {}
 jobs:
   test:

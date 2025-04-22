@@ -1,7 +1,13 @@
 name: Black Formatter
 'on':
-- push
-- pull_request
+  push:
+    branches:
+    - main
+    - develop
+  pull_request:
+    branches:
+    - main
+    - develop
 jobs:
   lint:
     name: Lint

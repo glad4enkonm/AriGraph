@@ -1,19 +1,23 @@
-name: Black Formatter test
+name: Black Formatter
 'on':
   push:
-    branches: &id001
+    branches:
     - main
-    - master
+    - develop
   pull_request:
-    branches: *id001
+    branches:
+    - main
+    - develop
 jobs:
-  black:
-    name: Run Black formatter
+  lint:
+    name: Lint
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repo
       uses: actions/checkout@v4
     - name: Run Black
-      uses: rickstaa/action-black@v1.3.3
+      uses: psf/black@stable
       with:
-        black_args: .
+        options: --check --diff
+        src: .
+        jupyter: 'false'
